@@ -27,24 +27,24 @@ export default function Location() {
       <div className="relative h-[480px] overflow-hidden rounded-xl bg-[#e8eef0]">
         <div className={`${mapBase} ${mapGrid}`} />
         <button className={`${mapControl} left-3 rounded-full`} aria-label="Search this area">
-          <MapSearch className="size-4" />
+          <MapSearch className="size-5" />
         </button>
         <div className="absolute right-3 top-3 flex flex-col gap-2">
           <button
             className="flex size-10 items-center justify-center rounded-lg border-none bg-white shadow-[0_2px_6px_#0003]"
             aria-label="Zoom in"
           >
-            <Plus className="size-4" />
+            <Plus className="size-5" />
           </button>
           <button
             className="flex size-10 items-center justify-center rounded-lg border-none bg-white shadow-[0_2px_6px_#0003]"
             aria-label="Zoom out"
           >
-            <Minus className="size-4" />
+            <Minus className="size-5" />
           </button>
         </div>
         <div className="absolute left-1/2 top-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-white shadow-[0_4px_12px_#0000004d]">
-          <HouseMarker className="size-[26px]" />
+          <HouseMarker className="size-9" />
         </div>
       </div>
       <div className="mt-[18px] text-sm text-ink">
