@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1300" width="1200" height="1300" style="background-color: #f5f6f8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF385C"/>
+      <stop offset="100%" stop-color="#B0084D"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="1300" fill="#f5f6f8"/>
+
+  <!-- ============ Header ============ -->
+  <rect x="0" y="0" width="1200" height="100" fill="url(#headerGrad)"/>
+  <text x="40" y="46" fill="#ffffff" font-size="25" font-weight="700" letter-spacing="0.3">Airbnb Listing Clone — System Architecture</text>
+  <text x="40" y="72" fill="#ffffff" font-size="13" font-weight="500" opacity="0.9">Live static frontend build, shown alongside the full-scale production roadmap</text>
+  <text x="1160" y="46" fill="#ffffff" font-size="13" font-weight="600" text-anchor="end" opacity="0.95">Next.js · TypeScript · Tailwind v4</text>
+  <text x="1160" y="68" fill="#ffffff" font-size="11" font-weight="500" text-anchor="end" opacity="0.75">Reference target: 100M+ user scale</text>
+
+  <!-- ============ Legend ============ -->
+  <rect x="40" y="124" width="196" height="32" rx="16" fill="#e9f9ef" stroke="#16a34a" stroke-width="1.25"/>
+  <circle cx="59" cy="140" r="5" fill="#16a34a"/>
+  <text x="74" y="144" font-size="12" font-weight="700" fill="#15803d">Implemented Today</text>
+
+  <rect x="252" y="124" width="196" height="32" rx="16" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1.25"/>
+  <circle cx="271" cy="140" r="5" fill="#9ca3af"/>
+  <text x="286" y="144" font-size="12" font-weight="700" fill="#4b5563">Planned / Roadmap</text>
+
+  <!-- ============ Timeline spine ============ -->
+  <line x1="70" y1="172" x2="70" y2="1147" stroke="#dcdfe4" stroke-width="3"/>
+
+  <!-- ============================================================ -->
+  <!-- STAGE 1 — Client & Edge Tier (IMPLEMENTED)                    -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="190" width="1040" height="190" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
+  </g>
+  <circle cx="70" cy="285" r="24" fill="#ffffff" stroke="#16a34a" stroke-width="3"/>
+  <text x="70" y="291" font-size="16" font-weight="700" fill="#16a34a" text-anchor="middle">1</text>
+
+  <text x="150" y="225" font-size="17" font-weight="700" fill="#222222">Client &amp; Edge Tier</text>
+  <rect x="1000" y="207" width="140" height="24" rx="12" fill="#e9f9ef" stroke="#16a34a" stroke-width="1"/>
+  <text x="1070" y="223" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle" letter-spacing="0.3">IMPLEMENTED</text>
+  <text x="150" y="248" font-size="12" fill="#717171">What actually ships today — a statically prerendered Next.js page, no backend</text>
+
+  <!-- chip: Next.js -->
+  <rect x="150" y="270" width="230" height="90" rx="10" fill="#fff5f6" stroke="#FF385C" stroke-width="1.25"/>
+  <circle cx="176" cy="296" r="14" fill="#FF385C"/>
+  <text x="176" y="300" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">N</text>
+  <text x="200" y="300" font-size="13" font-weight="700" fill="#222222">Next.js (Pages Router)</text>
+  <text x="166" y="322" font-size="10.5" fill="#717171">TypeScript, strict mode</text>
+  <text x="166" y="338" font-size="10.5" fill="#717171">Tailwind v4 · static prerender</text>
+
+  <!-- chip: CDN -->
+  <rect x="400" y="270" width="230" height="90" rx="10" fill="#f0f7ff" stroke="#0066cc" stroke-width="1.25"/>
+  <circle cx="426" cy="296" r="14" fill="#0066cc"/>
+  <text x="426" y="300" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">C</text>
+  <text x="450" y="300" font-size="13" font-weight="700" fill="#222222">Vercel / Cloudflare CDN</text>
+  <text x="416" y="322" font-size="10.5" fill="#717171">Static asset hosting</text>
+  <text x="416" y="338" font-size="10.5" fill="#717171">Global edge caching</text>
+
+  <!-- chip: Image Optimization -->
+  <rect x="650" y="270" width="230" height="90" rx="10" fill="#f4fbf7" stroke="#12824c" stroke-width="1.25"/>
+  <circle cx="676" cy="296" r="14" fill="#12824c"/>
+  <text x="676" y="300" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">I</text>
+  <text x="700" y="300" font-size="13" font-weight="700" fill="#222222">Image Optimization</text>
+  <text x="666" y="322" font-size="10.5" fill="#717171">Dynamic WebP / AVIF</text>
+  <text x="666" y="338" font-size="10.5" fill="#717171">resizing at the edge</text>
+
+  <!-- chip: WAF -->
+  <rect x="900" y="270" width="230" height="90" rx="10" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.25"/>
+  <circle cx="926" cy="296" r="14" fill="#8b5cf6"/>
+  <text x="926" y="300" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">W</text>
+  <text x="950" y="300" font-size="13" font-weight="700" fill="#222222">Web WAF &amp; DDoS Guard</text>
+  <text x="916" y="322" font-size="10.5" fill="#717171">Rate limiting</text>
+  <text x="916" y="338" font-size="10.5" fill="#717171">Bot &amp; abuse protection</text>
+
+  <!-- ============================================================ -->
+  <!-- STAGE 2 — API Gateway (ROADMAP)                               -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="400" width="1040" height="150" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
+  </g>
+  <circle cx="70" cy="475" r="24" fill="#ffffff" stroke="#9ca3af" stroke-width="3"/>
+  <text x="70" y="481" font-size="16" font-weight="700" fill="#6b7280" text-anchor="middle">2</text>
+
+  <text x="150" y="435" font-size="17" font-weight="700" fill="#222222">API Gateway &amp; Routing Tier</text>
+  <rect x="1000" y="417" width="140" height="24" rx="12" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1"/>
+  <text x="1070" y="433" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle" letter-spacing="0.3">ROADMAP</text>
+  <text x="150" y="458" font-size="12" fill="#717171">Envoy / Kong API Gateway — planned for the full-scale build</text>
+
+  <rect x="150" y="484" width="145" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="222" y="502" font-size="11" fill="#374151" text-anchor="middle">JWT Authentication</text>
+  <rect x="307" y="484" width="106" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="360" y="502" font-size="11" fill="#374151" text-anchor="middle">Service Mesh</text>
+  <rect x="425" y="484" width="158" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="504" y="502" font-size="11" fill="#374151" text-anchor="middle">Global Rate Limiting</text>
+  <rect x="595" y="484" width="178" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="684" y="502" font-size="11" fill="#374151" text-anchor="middle">Dynamic Request Routing</text>
+  <rect x="785" y="484" width="119" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="844" y="502" font-size="11" fill="#374151" text-anchor="middle">Load Balancing</text>
+
+  <!-- ============================================================ -->
+  <!-- STAGE 3 — Microservices (ROADMAP)                             -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="570" width="1040" height="260" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
+  </g>
+  <circle cx="70" cy="700" r="24" fill="#ffffff" stroke="#9ca3af" stroke-width="3"/>
+  <text x="70" y="706" font-size="16" font-weight="700" fill="#6b7280" text-anchor="middle">3</text>
+
+  <text x="150" y="605" font-size="17" font-weight="700" fill="#222222">Backend Microservices Tier</text>
+  <rect x="1000" y="587" width="140" height="24" rx="12" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1"/>
+  <text x="1070" y="603" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle" letter-spacing="0.3">ROADMAP</text>
+  <text x="150" y="628" font-size="12" fill="#717171">Stateless containers on Kubernetes — one service per bounded context</text>
+
+  <!-- Service: Listing & Content -->
+  <rect x="150" y="645" width="230" height="165" rx="10" fill="#fcfcfc" stroke="#dddddd" stroke-width="1.25"/>
+  <rect x="150" y="645" width="230" height="6" rx="3" fill="#FF385C"/>
+  <text x="166" y="680" font-size="13.5" font-weight="700" fill="#FF385C">Listing &amp; Content</text>
+  <text x="166" y="702" font-size="11" fill="#484848">• Property metadata &amp; amenities</text>
+  <text x="166" y="720" font-size="11" fill="#484848">• Photo tour hierarchy</text>
+  <text x="166" y="738" font-size="11" fill="#484848">• Host verification status</text>
+  <text x="166" y="795" font-size="10" fill="#9ca3af">High read / low write</text>
+
+  <!-- Service: Search & Discovery -->
+  <rect x="400" y="645" width="230" height="165" rx="10" fill="#fcfcfc" stroke="#dddddd" stroke-width="1.25"/>
+  <rect x="400" y="645" width="230" height="6" rx="3" fill="#0066cc"/>
+  <text x="416" y="680" font-size="13.5" font-weight="700" fill="#0066cc">Search &amp; Discovery</text>
+  <text x="416" y="702" font-size="11" fill="#484848">• Geo-spatial H3 indexing</text>
+  <text x="416" y="720" font-size="11" fill="#484848">• Availability filtering</text>
+  <text x="416" y="738" font-size="11" fill="#484848">• Personalization &amp; ranking</text>
+  <text x="416" y="795" font-size="10" fill="#9ca3af">Elasticsearch / OpenSearch</text>
+
+  <!-- Service: Booking & Reservation -->
+  <rect x="650" y="645" width="230" height="165" rx="10" fill="#fcfcfc" stroke="#dddddd" stroke-width="1.25"/>
+  <rect x="650" y="645" width="230" height="6" rx="3" fill="#12824c"/>
+  <text x="666" y="680" font-size="13.5" font-weight="700" fill="#12824c">Booking &amp; Reservation</text>
+  <text x="666" y="702" font-size="11" fill="#484848">• Calendar lock &amp; concurrency</text>
+  <text x="666" y="720" font-size="11" fill="#484848">• Price breakdown calculation</text>
+  <text x="666" y="738" font-size="11" fill="#484848">• Payment processing (Stripe)</text>
+  <text x="666" y="795" font-size="10" fill="#9ca3af">Distributed saga transactions</text>
+
+  <!-- Service: Review & Rating -->
+  <rect x="900" y="645" width="230" height="165" rx="10" fill="#fcfcfc" stroke="#dddddd" stroke-width="1.25"/>
+  <rect x="900" y="645" width="230" height="6" rx="3" fill="#8b5cf6"/>
+  <text x="916" y="680" font-size="13.5" font-weight="700" fill="#8b5cf6">Review &amp; Rating</text>
+  <text x="916" y="702" font-size="11" fill="#484848">• Category scores aggregation</text>
+  <text x="916" y="720" font-size="11" fill="#484848">• Guest favourite calculation</text>
+  <text x="916" y="738" font-size="11" fill="#484848">• Topic tagging &amp; sentiment</text>
+  <text x="916" y="795" font-size="10" fill="#9ca3af">Async event aggregation</text>
+
+  <!-- ============================================================ -->
+  <!-- STAGE 4 — Data / Cache / Events (ROADMAP)                     -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="850" width="1040" height="190" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
+  </g>
+  <circle cx="70" cy="945" r="24" fill="#ffffff" stroke="#9ca3af" stroke-width="3"/>
+  <text x="70" y="951" font-size="16" font-weight="700" fill="#6b7280" text-anchor="middle">4</text>
+
+  <text x="150" y="885" font-size="17" font-weight="700" fill="#222222">Data Storage, Caching &amp; Event Stream Tier</text>
+  <rect x="1000" y="867" width="140" height="24" rx="12" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1"/>
+  <text x="1070" y="883" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle" letter-spacing="0.3">ROADMAP</text>
+  <text x="150" y="908" font-size="12" fill="#717171">Persistence, cache and eventing layer behind the services above</text>
+
+  <!-- Redis -->
+  <rect x="150" y="925" width="230" height="95" rx="10" fill="#fff9e6" stroke="#d97706" stroke-width="1.25"/>
+  <text x="166" y="951" font-size="13" font-weight="700" fill="#b45309">Redis Cluster</text>
+  <text x="166" y="967" font-size="12" font-weight="700" fill="#b45309">(Cache &amp; Locks)</text>
+  <text x="166" y="988" font-size="10.5" fill="#8a6d3b">Listing caches · booking locks</text>
+  <text x="166" y="1003" font-size="10.5" fill="#8a6d3b">Sub-millisecond latency</text>
+
+  <!-- Postgres -->
+  <rect x="400" y="925" width="230" height="95" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.25"/>
+  <text x="416" y="951" font-size="13" font-weight="700" fill="#1d4ed8">Primary DB</text>
+  <text x="416" y="967" font-size="12" font-weight="700" fill="#1d4ed8">(PostgreSQL / Aurora)</text>
+  <text x="416" y="988" font-size="10.5" fill="#5875b0">Read replicas · geo extension</text>
+  <text x="416" y="1003" font-size="10.5" fill="#5875b0">Partitioned by region</text>
+
+  <!-- Kafka -->
+  <rect x="650" y="925" width="230" height="95" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.25"/>
+  <text x="666" y="951" font-size="13" font-weight="700" fill="#15803d">Apache Kafka</text>
+  <text x="666" y="967" font-size="12" font-weight="700" fill="#15803d">Event Stream</text>
+  <text x="666" y="988" font-size="10.5" fill="#5c8f6c">Booking events · review indexer</text>
+  <text x="666" y="1003" font-size="10.5" fill="#5c8f6c">Real-time analytics &amp; CDC</text>
+
+  <!-- S3 -->
+  <rect x="900" y="925" width="230" height="95" rx="10" fill="#fcf4ff" stroke="#c084fc" stroke-width="1.25"/>
+  <text x="916" y="951" font-size="13" font-weight="700" fill="#7e22ce">Object Storage</text>
+  <text x="916" y="967" font-size="12" font-weight="700" fill="#7e22ce">(AWS S3 / GCS)</text>
+  <text x="916" y="988" font-size="10.5" fill="#8a5ba3">Raw photo uploads &amp; originals</text>
+  <text x="916" y="1003" font-size="10.5" fill="#8a5ba3">Multi-region replication</text>
+
+  <!-- ============================================================ -->
+  <!-- STAGE 5 — Deployment & Ops (ROADMAP)                          -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="1060" width="1040" height="130" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
+  </g>
+  <circle cx="70" cy="1125" r="24" fill="#ffffff" stroke="#9ca3af" stroke-width="3"/>
+  <text x="70" y="1131" font-size="16" font-weight="700" fill="#6b7280" text-anchor="middle">5</text>
+
+  <text x="150" y="1095" font-size="17" font-weight="700" fill="#222222">Deployment &amp; Infrastructure Ops</text>
+  <rect x="1000" y="1077" width="140" height="24" rx="12" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1"/>
+  <text x="1070" y="1093" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle" letter-spacing="0.3">ROADMAP</text>
+  <text x="150" y="1118" font-size="12" fill="#717171">CI/CD, infrastructure-as-code, monitoring and error tracking for the full build</text>
+
+  <rect x="150" y="1135" width="158" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="229" y="1153" font-size="11" fill="#374151" text-anchor="middle">GitHub Actions CI/CD</text>
+  <rect x="320" y="1135" width="113" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="376" y="1153" font-size="11" fill="#374151" text-anchor="middle">Terraform IaC</text>
+  <rect x="445" y="1135" width="119" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="504" y="1153" font-size="11" fill="#374151" text-anchor="middle">Kubernetes HPA</text>
+  <rect x="576" y="1135" width="158" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="655" y="1153" font-size="11" fill="#374151" text-anchor="middle">Datadog + Prometheus</text>
+  <rect x="746" y="1135" width="165" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="828" y="1153" font-size="11" fill="#374151" text-anchor="middle">Sentry Error Tracking</text>
+
+  <!-- ============ Footer note ============ -->
+  <text x="600" y="1235" font-size="12" fill="#9ca3af" text-anchor="middle">Frontend build is documented in CLAUDE.md &amp; README.md.</text>
+  <text x="600" y="1255" font-size="12" fill="#9ca3af" text-anchor="middle">Tiers 2–5 are the target architecture for a future full-scale build, not yet implemented.</text>
+</svg>

@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design tokens, published to Tailwind's theme so the utilities in
+   the components resolve to this palette: bg-rausch, text-muted2,
+   border-line-soft, shadow-card, ease-airbnb, animate-lb-fade, …
+   ============================================================ */
+@theme {
+  --color-ink: #222222;
+  --color-muted: #6a6a6a;
+  --color-muted2: #717171;
+  --color-line: #dddddd;
+  --color-line-soft: #ebebeb;
+  --color-card-border: rgb(0 0 0 / 0.08);
+  --color-rausch: #ff385c;
+  --color-grey100: #f7f7f7;
+  --color-grey200: #f2f2f2;
+  --color-grey300: #ebebeb;
+
+  --font-sans:
+    "Airbnb Cereal VF", Circular, -apple-system, BlinkMacSystemFont, "system-ui", Roboto,
+    "Helvetica Neue", sans-serif;
+
+  /* The old stylesheet set font-size only and let line-height inherit from
+     body (the unitless 1.43 recomputes per element). Tailwind's named sizes
+     ship their own line-height, so each one is pinned back to 1.43 to keep
+     rendering identical. Anywhere the old CSS set an explicit line-height,
+     the component pairs its text-* with a leading-* that overrides this. */
+  --text-xs: 12px;
+  --text-xs--line-height: 1.43;
+  --text-sm: 14px;
+  --text-sm--line-height: 1.43;
+  --text-base: 16px;
+  --text-base--line-height: 1.43;
+  --text-lg: 18px;
+  --text-lg--line-height: 1.43;
+  --text-xl: 20px;
+  --text-xl--line-height: 1.43;
+  --text-2xl: 22px;
+  --text-2xl--line-height: 1.43;
+
+  --shadow-card: 0 6px 16px rgb(0 0 0 / 0.12);
+
+  --ease-airbnb: cubic-bezier(0.2, 0, 0, 1);
+  --animate-lb-fade: lb-fade 0.3s ease;
+
+  /* Gradients are not colours, so these stay plain vars and are applied
+     with bg-[image:var(--reserve)]. */
+  --reserve: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+  --reserve-hover: linear-gradient(to right, #d81b5f 0%, #c31a5b 50%, #bd0463 100%);
+}
+
+@keyframes lb-fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Optional variable font — falls back to the stack in --font-sans. */
+@font-face {
+  font-family: "Airbnb Cereal VF";
+  src: url("/fonts/AirbnbCerealVF.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+/* ============================================================
+   Everything below is global by nature: it targets the document, an
+   element default, or a class that JS toggles on <body>. There is no
+   element in the tree to hang a utility class on, so it cannot move
+   into the components. All component styling lives in Tailwind
+   utilities in the JSX.
+   ============================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #fff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.43;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Tailwind's preflight sets buttons to the spec default cursor. */
+  button {
+    cursor: pointer;
+  }
+
+  :focus {
+    outline: none;
+  }
+}
+
+/* `no-scroll` and `kbd` are toggled on <body> from app/page.tsx. */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Focus rings for keyboard users only. Applies to every focusable
+   descendant, so it has to be a descendant selector. Elements that need a
+   wider offset override it inline with a [body.kbd_&] variant. */
+body.kbd :focus-visible {
+  outline: 2px solid #222;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
