@@ -1,224 +1,253 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1300" width="1200" height="1300" style="background-color: #f5f6f8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <defs>
-    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FF385C"/>
-      <stop offset="100%" stop-color="#B0084D"/>
-    </linearGradient>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
-      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.08"/>
-    </filter>
-  </defs>
-
-  <rect x="0" y="0" width="1200" height="1300" fill="#f5f6f8"/>
-
-  <!-- ============ Header ============ -->
-  <rect x="0" y="0" width="1200" height="100" fill="url(#headerGrad)"/>
-  <text x="40" y="46" fill="#ffffff" font-size="25" font-weight="700" letter-spacing="0.3">Airbnb Listing Clone — System Architecture</text>
-  <text x="40" y="72" fill="#ffffff" font-size="13" font-weight="500" opacity="0.9">Live static frontend build, shown alongside the full-scale production roadmap</text>
-  <text x="1160" y="46" fill="#ffffff" font-size="13" font-weight="600" text-anchor="end" opacity="0.95">Next.js · TypeScript · Tailwind v4</text>
-  <text x="1160" y="68" fill="#ffffff" font-size="11" font-weight="500" text-anchor="end" opacity="0.75">Reference target: 100M+ user scale</text>
-
-  <!-- ============ Legend ============ -->
-  <rect x="40" y="124" width="196" height="32" rx="16" fill="#e9f9ef" stroke="#16a34a" stroke-width="1.25"/>
-  <circle cx="59" cy="140" r="5" fill="#16a34a"/>
-  <text x="74" y="144" font-size="12" font-weight="700" fill="#15803d">Implemented Today</text>
-
-  <rect x="252" y="124" width="196" height="32" rx="16" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1.25"/>
-  <circle cx="271" cy="140" r="5" fill="#9ca3af"/>
-  <text x="286" y="144" font-size="12" font-weight="700" fill="#4b5563">Planned / Roadmap</text>
-
-  <!-- ============ Timeline spine ============ -->
-  <line x1="70" y1="172" x2="70" y2="1147" stroke="#dcdfe4" stroke-width="3"/>
-
-  <!-- ============================================================ -->
-  <!-- STAGE 1 — Client & Edge Tier (IMPLEMENTED)                    -->
-  <!-- ============================================================ -->
-  <g filter="url(#shadow)">
-    <rect x="120" y="190" width="1040" height="190" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
-  </g>
-  <circle cx="70" cy="285" r="24" fill="#ffffff" stroke="#16a34a" stroke-width="3"/>
-  <text x="70" y="291" font-size="16" font-weight="700" fill="#16a34a" text-anchor="middle">1</text>
-
-  <text x="150" y="225" font-size="17" font-weight="700" fill="#222222">Client &amp; Edge Tier</text>
-  <rect x="1000" y="207" width="140" height="24" rx="12" fill="#e9f9ef" stroke="#16a34a" stroke-width="1"/>
-  <text x="1070" y="223" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle" letter-spacing="0.3">IMPLEMENTED</text>
-  <text x="150" y="248" font-size="12" fill="#717171">What actually ships today — a statically prerendered Next.js page, no backend</text>
-
-  <!-- chip: Next.js -->
-  <rect x="150" y="270" width="230" height="90" rx="10" fill="#fff5f6" stroke="#FF385C" stroke-width="1.25"/>
-  <circle cx="176" cy="296" r="14" fill="#FF385C"/>
-  <text x="176" y="300" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">N</text>
-  <text x="200" y="300" font-size="13" font-weight="700" fill="#222222">Next.js (Pages Router)</text>
-  <text x="166" y="322" font-size="10.5" fill="#717171">TypeScript, strict mode</text>
-  <text x="166" y="338" font-size="10.5" fill="#717171">Tailwind v4 · static prerender</text>
-
-  <!-- chip: CDN -->
-  <rect x="400" y="270" width="230" height="90" rx="10" fill="#f0f7ff" stroke="#0066cc" stroke-width="1.25"/>
-  <circle cx="426" cy="296" r="14" fill="#0066cc"/>
-  <text x="426" y="300" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">C</text>
-  <text x="450" y="300" font-size="13" font-weight="700" fill="#222222">Vercel / Cloudflare CDN</text>
-  <text x="416" y="322" font-size="10.5" fill="#717171">Static asset hosting</text>
-  <text x="416" y="338" font-size="10.5" fill="#717171">Global edge caching</text>
-
-  <!-- chip: Image Optimization -->
-  <rect x="650" y="270" width="230" height="90" rx="10" fill="#f4fbf7" stroke="#12824c" stroke-width="1.25"/>
-  <circle cx="676" cy="296" r="14" fill="#12824c"/>
-  <text x="676" y="300" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">I</text>
-  <text x="700" y="300" font-size="13" font-weight="700" fill="#222222">Image Optimization</text>
-  <text x="666" y="322" font-size="10.5" fill="#717171">Dynamic WebP / AVIF</text>
-  <text x="666" y="338" font-size="10.5" fill="#717171">resizing at the edge</text>
-
-  <!-- chip: WAF -->
-  <rect x="900" y="270" width="230" height="90" rx="10" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.25"/>
-  <circle cx="926" cy="296" r="14" fill="#8b5cf6"/>
-  <text x="926" y="300" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">W</text>
-  <text x="950" y="300" font-size="13" font-weight="700" fill="#222222">Web WAF &amp; DDoS Guard</text>
-  <text x="916" y="322" font-size="10.5" fill="#717171">Rate limiting</text>
-  <text x="916" y="338" font-size="10.5" fill="#717171">Bot &amp; abuse protection</text>
-
-  <!-- ============================================================ -->
-  <!-- STAGE 2 — API Gateway (ROADMAP)                               -->
-  <!-- ============================================================ -->
-  <g filter="url(#shadow)">
-    <rect x="120" y="400" width="1040" height="150" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
-  </g>
-  <circle cx="70" cy="475" r="24" fill="#ffffff" stroke="#9ca3af" stroke-width="3"/>
-  <text x="70" y="481" font-size="16" font-weight="700" fill="#6b7280" text-anchor="middle">2</text>
-
-  <text x="150" y="435" font-size="17" font-weight="700" fill="#222222">API Gateway &amp; Routing Tier</text>
-  <rect x="1000" y="417" width="140" height="24" rx="12" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1"/>
-  <text x="1070" y="433" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle" letter-spacing="0.3">ROADMAP</text>
-  <text x="150" y="458" font-size="12" fill="#717171">Envoy / Kong API Gateway — planned for the full-scale build</text>
-
-  <rect x="150" y="484" width="145" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="222" y="502" font-size="11" fill="#374151" text-anchor="middle">JWT Authentication</text>
-  <rect x="307" y="484" width="106" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="360" y="502" font-size="11" fill="#374151" text-anchor="middle">Service Mesh</text>
-  <rect x="425" y="484" width="158" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="504" y="502" font-size="11" fill="#374151" text-anchor="middle">Global Rate Limiting</text>
-  <rect x="595" y="484" width="178" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="684" y="502" font-size="11" fill="#374151" text-anchor="middle">Dynamic Request Routing</text>
-  <rect x="785" y="484" width="119" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="844" y="502" font-size="11" fill="#374151" text-anchor="middle">Load Balancing</text>
-
-  <!-- ============================================================ -->
-  <!-- STAGE 3 — Microservices (ROADMAP)                             -->
-  <!-- ============================================================ -->
-  <g filter="url(#shadow)">
-    <rect x="120" y="570" width="1040" height="260" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
-  </g>
-  <circle cx="70" cy="700" r="24" fill="#ffffff" stroke="#9ca3af" stroke-width="3"/>
-  <text x="70" y="706" font-size="16" font-weight="700" fill="#6b7280" text-anchor="middle">3</text>
-
-  <text x="150" y="605" font-size="17" font-weight="700" fill="#222222">Backend Microservices Tier</text>
-  <rect x="1000" y="587" width="140" height="24" rx="12" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1"/>
-  <text x="1070" y="603" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle" letter-spacing="0.3">ROADMAP</text>
-  <text x="150" y="628" font-size="12" fill="#717171">Stateless containers on Kubernetes — one service per bounded context</text>
-
-  <!-- Service: Listing & Content -->
-  <rect x="150" y="645" width="230" height="165" rx="10" fill="#fcfcfc" stroke="#dddddd" stroke-width="1.25"/>
-  <rect x="150" y="645" width="230" height="6" rx="3" fill="#FF385C"/>
-  <text x="166" y="680" font-size="13.5" font-weight="700" fill="#FF385C">Listing &amp; Content</text>
-  <text x="166" y="702" font-size="11" fill="#484848">• Property metadata &amp; amenities</text>
-  <text x="166" y="720" font-size="11" fill="#484848">• Photo tour hierarchy</text>
-  <text x="166" y="738" font-size="11" fill="#484848">• Host verification status</text>
-  <text x="166" y="795" font-size="10" fill="#9ca3af">High read / low write</text>
-
-  <!-- Service: Search & Discovery -->
-  <rect x="400" y="645" width="230" height="165" rx="10" fill="#fcfcfc" stroke="#dddddd" stroke-width="1.25"/>
-  <rect x="400" y="645" width="230" height="6" rx="3" fill="#0066cc"/>
-  <text x="416" y="680" font-size="13.5" font-weight="700" fill="#0066cc">Search &amp; Discovery</text>
-  <text x="416" y="702" font-size="11" fill="#484848">• Geo-spatial H3 indexing</text>
-  <text x="416" y="720" font-size="11" fill="#484848">• Availability filtering</text>
-  <text x="416" y="738" font-size="11" fill="#484848">• Personalization &amp; ranking</text>
-  <text x="416" y="795" font-size="10" fill="#9ca3af">Elasticsearch / OpenSearch</text>
-
-  <!-- Service: Booking & Reservation -->
-  <rect x="650" y="645" width="230" height="165" rx="10" fill="#fcfcfc" stroke="#dddddd" stroke-width="1.25"/>
-  <rect x="650" y="645" width="230" height="6" rx="3" fill="#12824c"/>
-  <text x="666" y="680" font-size="13.5" font-weight="700" fill="#12824c">Booking &amp; Reservation</text>
-  <text x="666" y="702" font-size="11" fill="#484848">• Calendar lock &amp; concurrency</text>
-  <text x="666" y="720" font-size="11" fill="#484848">• Price breakdown calculation</text>
-  <text x="666" y="738" font-size="11" fill="#484848">• Payment processing (Stripe)</text>
-  <text x="666" y="795" font-size="10" fill="#9ca3af">Distributed saga transactions</text>
-
-  <!-- Service: Review & Rating -->
-  <rect x="900" y="645" width="230" height="165" rx="10" fill="#fcfcfc" stroke="#dddddd" stroke-width="1.25"/>
-  <rect x="900" y="645" width="230" height="6" rx="3" fill="#8b5cf6"/>
-  <text x="916" y="680" font-size="13.5" font-weight="700" fill="#8b5cf6">Review &amp; Rating</text>
-  <text x="916" y="702" font-size="11" fill="#484848">• Category scores aggregation</text>
-  <text x="916" y="720" font-size="11" fill="#484848">• Guest favourite calculation</text>
-  <text x="916" y="738" font-size="11" fill="#484848">• Topic tagging &amp; sentiment</text>
-  <text x="916" y="795" font-size="10" fill="#9ca3af">Async event aggregation</text>
-
-  <!-- ============================================================ -->
-  <!-- STAGE 4 — Data / Cache / Events (ROADMAP)                     -->
-  <!-- ============================================================ -->
-  <g filter="url(#shadow)">
-    <rect x="120" y="850" width="1040" height="190" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
-  </g>
-  <circle cx="70" cy="945" r="24" fill="#ffffff" stroke="#9ca3af" stroke-width="3"/>
-  <text x="70" y="951" font-size="16" font-weight="700" fill="#6b7280" text-anchor="middle">4</text>
-
-  <text x="150" y="885" font-size="17" font-weight="700" fill="#222222">Data Storage, Caching &amp; Event Stream Tier</text>
-  <rect x="1000" y="867" width="140" height="24" rx="12" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1"/>
-  <text x="1070" y="883" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle" letter-spacing="0.3">ROADMAP</text>
-  <text x="150" y="908" font-size="12" fill="#717171">Persistence, cache and eventing layer behind the services above</text>
-
-  <!-- Redis -->
-  <rect x="150" y="925" width="230" height="95" rx="10" fill="#fff9e6" stroke="#d97706" stroke-width="1.25"/>
-  <text x="166" y="951" font-size="13" font-weight="700" fill="#b45309">Redis Cluster</text>
-  <text x="166" y="967" font-size="12" font-weight="700" fill="#b45309">(Cache &amp; Locks)</text>
-  <text x="166" y="988" font-size="10.5" fill="#8a6d3b">Listing caches · booking locks</text>
-  <text x="166" y="1003" font-size="10.5" fill="#8a6d3b">Sub-millisecond latency</text>
-
-  <!-- Postgres -->
-  <rect x="400" y="925" width="230" height="95" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.25"/>
-  <text x="416" y="951" font-size="13" font-weight="700" fill="#1d4ed8">Primary DB</text>
-  <text x="416" y="967" font-size="12" font-weight="700" fill="#1d4ed8">(PostgreSQL / Aurora)</text>
-  <text x="416" y="988" font-size="10.5" fill="#5875b0">Read replicas · geo extension</text>
-  <text x="416" y="1003" font-size="10.5" fill="#5875b0">Partitioned by region</text>
-
-  <!-- Kafka -->
-  <rect x="650" y="925" width="230" height="95" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.25"/>
-  <text x="666" y="951" font-size="13" font-weight="700" fill="#15803d">Apache Kafka</text>
-  <text x="666" y="967" font-size="12" font-weight="700" fill="#15803d">Event Stream</text>
-  <text x="666" y="988" font-size="10.5" fill="#5c8f6c">Booking events · review indexer</text>
-  <text x="666" y="1003" font-size="10.5" fill="#5c8f6c">Real-time analytics &amp; CDC</text>
-
-  <!-- S3 -->
-  <rect x="900" y="925" width="230" height="95" rx="10" fill="#fcf4ff" stroke="#c084fc" stroke-width="1.25"/>
-  <text x="916" y="951" font-size="13" font-weight="700" fill="#7e22ce">Object Storage</text>
-  <text x="916" y="967" font-size="12" font-weight="700" fill="#7e22ce">(AWS S3 / GCS)</text>
-  <text x="916" y="988" font-size="10.5" fill="#8a5ba3">Raw photo uploads &amp; originals</text>
-  <text x="916" y="1003" font-size="10.5" fill="#8a5ba3">Multi-region replication</text>
-
-  <!-- ============================================================ -->
-  <!-- STAGE 5 — Deployment & Ops (ROADMAP)                          -->
-  <!-- ============================================================ -->
-  <g filter="url(#shadow)">
-    <rect x="120" y="1060" width="1040" height="130" rx="14" fill="#ffffff" stroke="#e4e4e4" stroke-width="1.25"/>
-  </g>
-  <circle cx="70" cy="1125" r="24" fill="#ffffff" stroke="#9ca3af" stroke-width="3"/>
-  <text x="70" y="1131" font-size="16" font-weight="700" fill="#6b7280" text-anchor="middle">5</text>
-
-  <text x="150" y="1095" font-size="17" font-weight="700" fill="#222222">Deployment &amp; Infrastructure Ops</text>
-  <rect x="1000" y="1077" width="140" height="24" rx="12" fill="#f0f1f3" stroke="#9ca3af" stroke-width="1"/>
-  <text x="1070" y="1093" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle" letter-spacing="0.3">ROADMAP</text>
-  <text x="150" y="1118" font-size="12" fill="#717171">CI/CD, infrastructure-as-code, monitoring and error tracking for the full build</text>
-
-  <rect x="150" y="1135" width="158" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="229" y="1153" font-size="11" fill="#374151" text-anchor="middle">GitHub Actions CI/CD</text>
-  <rect x="320" y="1135" width="113" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="376" y="1153" font-size="11" fill="#374151" text-anchor="middle">Terraform IaC</text>
-  <rect x="445" y="1135" width="119" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="504" y="1153" font-size="11" fill="#374151" text-anchor="middle">Kubernetes HPA</text>
-  <rect x="576" y="1135" width="158" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="655" y="1153" font-size="11" fill="#374151" text-anchor="middle">Datadog + Prometheus</text>
-  <rect x="746" y="1135" width="165" height="28" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="828" y="1153" font-size="11" fill="#374151" text-anchor="middle">Sentry Error Tracking</text>
-
-  <!-- ============ Footer note ============ -->
-  <text x="600" y="1235" font-size="12" fill="#9ca3af" text-anchor="middle">Frontend build is documented in CLAUDE.md &amp; README.md.</text>
-  <text x="600" y="1255" font-size="12" fill="#9ca3af" text-anchor="middle">Tiers 2–5 are the target architecture for a future full-scale build, not yet implemented.</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:c2pa="http://c2pa.org/manifest" viewBox="0 0 1200 1636" width="1200" height="1636" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo5ZjcyMDdlNC0yYmY2LTQ1MmItYTRmYy1jZmIyZWQ4ZTI2M2QAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaLzEYVbR8bKVcRcA7qmm+4QAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo4ZWQ4NjIzOS1kZGRkLTQyNTktOGVmYy1jZGViNjgxMzY0ZTFscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNowOZ8VrlZUtM5mg1zgm/h/gAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggWtAgWwVJV1VIhRJrWB0tCDmh+UWwYmnp3lKLGEn9tmOkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaHGL/LpNCT9e76XLZf9RXrAAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAyl872USQFVx9ka+mYVOcUJvwMIJOqnIKb5vw/bjFhE2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBj2Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjlmNzIwN2U0LTJiZjYtNDUyYi1hNGZjLWNmYjJlZDhlMjYzZC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmYwMDA1MzZiLWZhZDctNDk4Ni1iYzlmLWY3YmQwYTNhMmI0ZHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBa0CBbBUlXVUiFEmtYHS0IOaH5RbBiaeneUosYSf22Y6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggMx6Fg7v7t4VFzlzzWecB8IiV25jBgSSsF04OTVLBBIuiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggcBlgYEPumttNTQMjob/2HDi867c5DJt719GIvEixJiZ0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQAvrp44lWEJ8pCxhFC5LO4UoCqDQsLPJ2qLaYcw7lWhW8jVuz5nsQoxQT3U2nW19QZXP4rlCsggsPNRjObkVpcY=</c2pa:manifest></metadata>
+<defs><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#0891B2"/></linearGradient><filter id="sh" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity=".08"/></filter></defs>
+<rect width="1200" height="1636" fill="#f4f6ff"/><rect width="1200" height="100" fill="url(#hg)"/>
+<text x="40" y="46" fill="#fff" font-size="25" font-weight="700">Airbnb Listing Clone — Full-Stack Architecture</text>
+<text x="40" y="72" fill="#fff" fill-opacity=".9" font-size="13">Built with Next.js, Node.js, SQL, AWS, CDN, Docker, Kubernetes and Redis — follow one request through 5 stages</text>
+<text x="1160" y="46" fill="#fff" font-size="13" font-weight="600" text-anchor="end">Next.js App Router · TypeScript</text>
+<text x="1160" y="68" fill="#fff" fill-opacity=".8" font-size="11" text-anchor="end">Reference target: 100M+ users</text>
+<rect x="40" y="120" width="150" height="32" rx="16" fill="#ccfbf1" stroke="#0D9488"/><circle cx="59" cy="136" r="5" fill="#0D9488"/><text x="74" y="140" font-size="12" font-weight="700" fill="#0f766e">Built today</text>
+<rect x="202" y="120" width="170" height="32" rx="16" fill="#f1f2f6" stroke="#9ca3af"/><circle cx="221" cy="136" r="5" fill="#9ca3af"/><text x="236" y="140" font-size="12" font-weight="700" fill="#4b5563">Planned / Roadmap</text>
+<text x="392" y="141" font-size="12" fill="#6b7280">Each stage = one layer a request passes through. Steps are numbered (1.1, 1.2 …).</text>
+<text x="40" y="181" font-size="12" font-weight="700" fill="#1e1b4b">My stack:</text>
+<rect x="110" y="166" width="84" height="24" rx="12" fill="#fff" stroke="#4F46E5"/><text x="152.0" y="182" font-size="11.5" font-weight="700" fill="#4F46E5" text-anchor="middle">Next.js</text>
+<rect x="204" y="166" width="84" height="24" rx="12" fill="#fff" stroke="#0D9488"/><text x="246.0" y="182" font-size="11.5" font-weight="700" fill="#0D9488" text-anchor="middle">Node.js</text>
+<rect x="298" y="166" width="52" height="24" rx="12" fill="#fff" stroke="#0891B2"/><text x="324.0" y="182" font-size="11.5" font-weight="700" fill="#0891B2" text-anchor="middle">SQL</text>
+<rect x="360" y="166" width="52" height="24" rx="12" fill="#fff" stroke="#D97706"/><text x="386.0" y="182" font-size="11.5" font-weight="700" fill="#D97706" text-anchor="middle">AWS</text>
+<rect x="422" y="166" width="52" height="24" rx="12" fill="#fff" stroke="#7C3AED"/><text x="448.0" y="182" font-size="11.5" font-weight="700" fill="#7C3AED" text-anchor="middle">CDN</text>
+<rect x="484" y="166" width="76" height="24" rx="12" fill="#fff" stroke="#0891B2"/><text x="522.0" y="182" font-size="11.5" font-weight="700" fill="#0891B2" text-anchor="middle">Docker</text>
+<rect x="570" y="166" width="108" height="24" rx="12" fill="#fff" stroke="#4F46E5"/><text x="624.0" y="182" font-size="11.5" font-weight="700" fill="#4F46E5" text-anchor="middle">Kubernetes</text>
+<rect x="688" y="166" width="68" height="24" rx="12" fill="#fff" stroke="#E11D48"/><text x="722.0" y="182" font-size="11.5" font-weight="700" fill="#E11D48" text-anchor="middle">Redis</text>
+<line x1="70" y1="205" x2="70" y2="1420" stroke="#d9dcf0" stroke-width="3"/>
+<rect x="120" y="215" width="1040" height="277" rx="14" fill="#fff" stroke="#e0e3f5" filter="url(#sh)"/>
+<circle cx="70" cy="250" r="24" fill="#fff" stroke="#0D9488" stroke-width="3"/>
+<text x="70" y="256" font-size="16" font-weight="700" fill="#0D9488" text-anchor="middle">1</text>
+<text x="150" y="249" font-size="18" font-weight="700" fill="#1e1b4b">Client &amp; Edge Tier</text>
+<rect x="1000" y="231" width="140" height="24" rx="12" fill="#ccfbf1" stroke="#0D9488"/>
+<text x="1070" y="247" font-size="10" font-weight="700" fill="#0f766e" text-anchor="middle">BUILT TODAY</text>
+<text x="150" y="273" font-size="12" fill="#6b7280">In simple words: what the visitor touches. A pre-built Next.js page is delivered by the CDN, with optimized photos, behind a firewall.</text>
+<rect x="150" y="290" width="230" height="130" rx="10" fill="#fff" stroke="#4F46E5" stroke-opacity=".45"/>
+<path d="M150 300a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H150z" fill="#4F46E5"/>
+<text x="164" y="318" font-size="13" font-weight="700" fill="#4F46E5">1.1 Next.js App Router</text>
+<text x="164" y="338" font-size="10.5" fill="#374151">• app/ folder: layout.tsx, page.tsx</text>
+<text x="164" y="353" font-size="10.5" fill="#374151">• Server Components render HTML</text>
+<text x="164" y="368" font-size="10.5" fill="#374151">• generateMetadata() for SEO</text>
+<text x="164" y="383" font-size="10.5" fill="#374151">• Static prerender / ISR for speed</text>
+<text x="164" y="410" font-size="10" fill="#9ca3af">TypeScript · Tailwind v4</text>
+<rect x="400" y="290" width="230" height="130" rx="10" fill="#fff" stroke="#0891B2" stroke-opacity=".45"/>
+<path d="M400 300a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H400z" fill="#0891B2"/>
+<text x="414" y="318" font-size="13" font-weight="700" fill="#0891B2">1.2 CDN (CloudFront)</text>
+<text x="414" y="338" font-size="10.5" fill="#374151">• Build assets are pushed to S3</text>
+<text x="414" y="353" font-size="10.5" fill="#374151">• CloudFront caches at edge nodes</text>
+<text x="414" y="368" font-size="10.5" fill="#374151">• Long cache headers on assets</text>
+<text x="414" y="383" font-size="10.5" fill="#374151">• Result: low latency worldwide</text>
+<text x="414" y="410" font-size="10" fill="#9ca3af">AWS CloudFront + S3</text>
+<rect x="650" y="290" width="230" height="130" rx="10" fill="#fff" stroke="#0D9488" stroke-opacity=".45"/>
+<path d="M650 300a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H650z" fill="#0D9488"/>
+<text x="664" y="318" font-size="13" font-weight="700" fill="#0D9488">1.3 Image Optimization</text>
+<text x="664" y="338" font-size="10.5" fill="#374151">• next/image resizes on demand</text>
+<text x="664" y="353" font-size="10.5" fill="#374151">• Serves WebP / AVIF formats</text>
+<text x="664" y="368" font-size="10.5" fill="#374151">• Originals are stored in S3</text>
+<text x="664" y="383" font-size="10.5" fill="#374151">• CDN caches the resized copies</text>
+<text x="664" y="410" font-size="10" fill="#9ca3af">next/image · S3 · CloudFront</text>
+<rect x="900" y="290" width="230" height="130" rx="10" fill="#fff" stroke="#7C3AED" stroke-opacity=".45"/>
+<path d="M900 300a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H900z" fill="#7C3AED"/>
+<text x="914" y="318" font-size="13" font-weight="700" fill="#7C3AED">1.4 AWS WAF &amp; Shield</text>
+<text x="914" y="338" font-size="10.5" fill="#374151">• WAF rules block bad requests</text>
+<text x="914" y="353" font-size="10.5" fill="#374151">• Rate-based rules stop floods</text>
+<text x="914" y="368" font-size="10.5" fill="#374151">• Shield absorbs DDoS attacks</text>
+<text x="914" y="383" font-size="10.5" fill="#374151">• Attached to CloudFront / ALB</text>
+<text x="914" y="410" font-size="10" fill="#9ca3af">AWS WAF + Shield</text>
+<rect x="150" y="432" width="980" height="46" rx="10" fill="#eef2ff" stroke="#4F46E5" stroke-opacity=".5"/>
+<text x="166" y="451" font-size="11.5" font-weight="700" fill="#4F46E5">Changed: Pages Router (pages/) → App Router (app/).</text>
+<text x="166" y="468" font-size="11" fill="#374151">Gives nested layouts, Server Components by default, loading.tsx streaming and the Metadata API. Static build today; later a Docker image.</text>
+<rect x="120" y="512" width="1040" height="203" rx="14" fill="#fff" stroke="#e0e3f5" filter="url(#sh)"/>
+<circle cx="70" cy="547" r="24" fill="#fff" stroke="#9ca3af" stroke-width="3"/>
+<text x="70" y="553" font-size="16" font-weight="700" fill="#9ca3af" text-anchor="middle">2</text>
+<text x="150" y="546" font-size="18" font-weight="700" fill="#1e1b4b">Ingress, Auth &amp; Routing Tier</text>
+<rect x="1000" y="528" width="140" height="24" rx="12" fill="#f1f2f6" stroke="#9ca3af"/>
+<text x="1070" y="544" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle">ROADMAP</text>
+<text x="150" y="570" font-size="12" fill="#6b7280">In simple words: one front door to the cluster. It checks login (JWT), limits abuse with Redis and sends each request to the right Node.js service.</text>
+<rect x="150" y="587" width="184" height="112" rx="10" fill="#fff" stroke="#4F46E5" stroke-opacity=".45"/>
+<path d="M150 597a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H150z" fill="#4F46E5"/>
+<text x="164" y="615" font-size="13" font-weight="700" fill="#4F46E5">2.1 Ingress / ALB</text>
+<text x="164" y="635" font-size="10.5" fill="#374151">• One entry into the cluster</text>
+<text x="164" y="650" font-size="10.5" fill="#374151">• TLS (HTTPS) ends here</text>
+<text x="164" y="665" font-size="10.5" fill="#374151">• AWS ALB or Nginx Ingress</text>
+<text x="164" y="689" font-size="10" fill="#9ca3af">Kubernetes Ingress</text>
+<rect x="349" y="587" width="184" height="112" rx="10" fill="#fff" stroke="#0D9488" stroke-opacity=".45"/>
+<path d="M349 597a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H349z" fill="#0D9488"/>
+<text x="363" y="615" font-size="13" font-weight="700" fill="#0D9488">2.2 JWT Auth</text>
+<text x="363" y="635" font-size="10.5" fill="#374151">• Node.js middleware verifies</text>
+<text x="363" y="650" font-size="10.5" fill="#374151">• the token on each request</text>
+<text x="363" y="665" font-size="10.5" fill="#374151">• Adds user id to req.user</text>
+<text x="363" y="689" font-size="10" fill="#9ca3af">jsonwebtoken · Node.js</text>
+<rect x="548" y="587" width="184" height="112" rx="10" fill="#fff" stroke="#E11D48" stroke-opacity=".45"/>
+<path d="M548 597a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H548z" fill="#E11D48"/>
+<text x="562" y="615" font-size="13" font-weight="700" fill="#E11D48">2.3 Rate Limiting</text>
+<text x="562" y="635" font-size="10.5" fill="#374151">• Counter per IP / user</text>
+<text x="562" y="650" font-size="10.5" fill="#374151">• Stored in Redis (INCR+TTL)</text>
+<text x="562" y="665" font-size="10.5" fill="#374151">• Returns 429 when exceeded</text>
+<text x="562" y="689" font-size="10" fill="#9ca3af">Redis + Node.js</text>
+<rect x="747" y="587" width="184" height="112" rx="10" fill="#fff" stroke="#7C3AED" stroke-opacity=".45"/>
+<path d="M747 597a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H747z" fill="#7C3AED"/>
+<text x="761" y="615" font-size="13" font-weight="700" fill="#7C3AED">2.4 Path Routing</text>
+<text x="761" y="635" font-size="10.5" fill="#374151">• /listings → Listing svc</text>
+<text x="761" y="650" font-size="10.5" fill="#374151">• /search → Search svc</text>
+<text x="761" y="665" font-size="10.5" fill="#374151">• /bookings → Booking svc</text>
+<text x="761" y="689" font-size="10" fill="#9ca3af">Ingress rules</text>
+<rect x="946" y="587" width="184" height="112" rx="10" fill="#fff" stroke="#0891B2" stroke-opacity=".45"/>
+<path d="M946 597a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H946z" fill="#0891B2"/>
+<text x="960" y="615" font-size="13" font-weight="700" fill="#0891B2">2.5 Load Balancing</text>
+<text x="960" y="635" font-size="10.5" fill="#374151">• ALB spreads load to pods</text>
+<text x="960" y="650" font-size="10.5" fill="#374151">• K8s Service picks a pod</text>
+<text x="960" y="665" font-size="10.5" fill="#374151">• Skips pods failing checks</text>
+<text x="960" y="689" font-size="10" fill="#9ca3af">ALB + K8s Service</text>
+<rect x="120" y="735" width="1040" height="251" rx="14" fill="#fff" stroke="#e0e3f5" filter="url(#sh)"/>
+<circle cx="70" cy="770" r="24" fill="#fff" stroke="#9ca3af" stroke-width="3"/>
+<text x="70" y="776" font-size="16" font-weight="700" fill="#9ca3af" text-anchor="middle">3</text>
+<text x="150" y="769" font-size="18" font-weight="700" fill="#1e1b4b">Node.js Microservices Tier</text>
+<rect x="1000" y="751" width="140" height="24" rx="12" fill="#f1f2f6" stroke="#9ca3af"/>
+<text x="1070" y="767" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle">ROADMAP</text>
+<text x="150" y="793" font-size="12" fill="#6b7280">In simple words: the brains. Each job is a small Node.js (Express) service in a Docker container, run by Kubernetes so each can scale alone.</text>
+<rect x="150" y="810" width="230" height="160" rx="10" fill="#fff" stroke="#4F46E5" stroke-opacity=".45"/>
+<path d="M150 820a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H150z" fill="#4F46E5"/>
+<text x="164" y="838" font-size="13" font-weight="700" fill="#4F46E5">3.1 Listing Service</text>
+<text x="164" y="858" font-size="10.5" fill="#374151">• GET /listings/:id (Express)</text>
+<text x="164" y="873" font-size="10.5" fill="#374151">• SQL joins: listing, host, photos</text>
+<text x="164" y="888" font-size="10.5" fill="#374151">• Cached in Redis for 5 minutes</text>
+<text x="164" y="911" font-size="10.5" font-weight="700" font-style="italic" fill="#4F46E5">Gives the page its data.</text>
+<text x="164" y="960" font-size="10" fill="#9ca3af">Node.js · Docker container</text>
+<rect x="400" y="810" width="230" height="160" rx="10" fill="#fff" stroke="#0891B2" stroke-opacity=".45"/>
+<path d="M400 820a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H400z" fill="#0891B2"/>
+<text x="414" y="838" font-size="13" font-weight="700" fill="#0891B2">3.2 Search Service</text>
+<text x="414" y="858" font-size="10.5" fill="#374151">• Filters: city, dates, price</text>
+<text x="414" y="873" font-size="10.5" fill="#374151">• SQL indexes + lat/lng bounding box</text>
+<text x="414" y="888" font-size="10.5" fill="#374151">• Popular queries cached in Redis</text>
+<text x="414" y="911" font-size="10.5" font-weight="700" font-style="italic" fill="#0891B2">Finds the right stay.</text>
+<text x="414" y="960" font-size="10" fill="#9ca3af">SQL index tuning · Node.js</text>
+<rect x="650" y="810" width="230" height="160" rx="10" fill="#fff" stroke="#0D9488" stroke-opacity=".45"/>
+<path d="M650 820a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H650z" fill="#0D9488"/>
+<text x="664" y="838" font-size="13" font-weight="700" fill="#0D9488">3.3 Booking Service</text>
+<text x="664" y="858" font-size="10.5" fill="#374151">• Redis lock on listing + dates</text>
+<text x="664" y="873" font-size="10.5" fill="#374151">• SQL transaction inserts booking</text>
+<text x="664" y="888" font-size="10.5" fill="#374151">• Payment via Stripe API</text>
+<text x="664" y="911" font-size="10.5" font-weight="700" font-style="italic" fill="#0D9488">Prevents double-booking.</text>
+<text x="664" y="960" font-size="10" fill="#9ca3af">ACID transaction · Node.js</text>
+<rect x="900" y="810" width="230" height="160" rx="10" fill="#fff" stroke="#7C3AED" stroke-opacity=".45"/>
+<path d="M900 820a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H900z" fill="#7C3AED"/>
+<text x="914" y="838" font-size="13" font-weight="700" fill="#7C3AED">3.4 Review Service</text>
+<text x="914" y="858" font-size="10.5" fill="#374151">• POST review → SQL table</text>
+<text x="914" y="873" font-size="10.5" fill="#374151">• AVG(rating) per category</text>
+<text x="914" y="888" font-size="10.5" fill="#374151">• Updates cached rating in Redis</text>
+<text x="914" y="911" font-size="10.5" font-weight="700" font-style="italic" fill="#7C3AED">Builds guest trust.</text>
+<text x="914" y="960" font-size="10" fill="#9ca3af">Node.js · SQL aggregates</text>
+<rect x="120" y="1006" width="1040" height="221" rx="14" fill="#fff" stroke="#e0e3f5" filter="url(#sh)"/>
+<circle cx="70" cy="1041" r="24" fill="#fff" stroke="#9ca3af" stroke-width="3"/>
+<text x="70" y="1047" font-size="16" font-weight="700" fill="#9ca3af" text-anchor="middle">4</text>
+<text x="150" y="1040" font-size="18" font-weight="700" fill="#1e1b4b">Data Storage, Cache &amp; Queue Tier</text>
+<rect x="1000" y="1022" width="140" height="24" rx="12" fill="#f1f2f6" stroke="#9ca3af"/>
+<text x="1070" y="1038" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle">ROADMAP</text>
+<text x="150" y="1064" font-size="12" fill="#6b7280">In simple words: where data is kept (SQL), remembered fast (Redis), stored as files (S3) and processed later (job queue).</text>
+<rect x="150" y="1081" width="230" height="130" rx="10" fill="#fff" stroke="#D97706" stroke-opacity=".45"/>
+<path d="M150 1091a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H150z" fill="#D97706"/>
+<text x="164" y="1109" font-size="13" font-weight="700" fill="#D97706">4.1 Redis Cache &amp; Locks</text>
+<text x="164" y="1129" font-size="10.5" fill="#374151">• Caches listing &amp; search data</text>
+<text x="164" y="1144" font-size="10.5" fill="#374151">• Distributed locks for bookings</text>
+<text x="164" y="1159" font-size="10.5" fill="#374151">• Rate-limit counters</text>
+<text x="164" y="1201" font-size="10" fill="#9ca3af">AWS ElastiCache (Redis)</text>
+<rect x="400" y="1081" width="230" height="130" rx="10" fill="#fff" stroke="#4F46E5" stroke-opacity=".45"/>
+<path d="M400 1091a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H400z" fill="#4F46E5"/>
+<text x="414" y="1109" font-size="13" font-weight="700" fill="#4F46E5">4.2 SQL Database</text>
+<text x="414" y="1129" font-size="10.5" fill="#374151">• Tables: users, listings, bookings</text>
+<text x="414" y="1144" font-size="10.5" fill="#374151">• Indexes on city, dates, price</text>
+<text x="414" y="1159" font-size="10.5" fill="#374151">• Primary + read replicas</text>
+<text x="414" y="1201" font-size="10" fill="#9ca3af">AWS RDS (PostgreSQL / MySQL)</text>
+<rect x="650" y="1081" width="230" height="130" rx="10" fill="#fff" stroke="#7C3AED" stroke-opacity=".45"/>
+<path d="M650 1091a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H650z" fill="#7C3AED"/>
+<text x="664" y="1109" font-size="13" font-weight="700" fill="#7C3AED">4.3 Object Storage</text>
+<text x="664" y="1129" font-size="10.5" fill="#374151">• Original photo uploads</text>
+<text x="664" y="1144" font-size="10.5" fill="#374151">• Pre-signed URLs for upload</text>
+<text x="664" y="1159" font-size="10.5" fill="#374151">• CloudFront serves them</text>
+<text x="664" y="1201" font-size="10" fill="#9ca3af">AWS S3</text>
+<rect x="900" y="1081" width="230" height="130" rx="10" fill="#fff" stroke="#0D9488" stroke-opacity=".45"/>
+<path d="M900 1091a10 10 0 0 1 10-10h210a10 10 0 0 1 10 10v0H900z" fill="#0D9488"/>
+<text x="914" y="1109" font-size="13" font-weight="700" fill="#0D9488">4.4 Async Job Queue</text>
+<text x="914" y="1129" font-size="10.5" fill="#374151">• Redis-backed job queue</text>
+<text x="914" y="1144" font-size="10.5" fill="#374151">• Emails, image resize, reindex</text>
+<text x="914" y="1159" font-size="10.5" fill="#374151">• Workers retry failed jobs</text>
+<text x="914" y="1201" font-size="10" fill="#9ca3af">BullMQ + Redis</text>
+<rect x="120" y="1247" width="1040" height="203" rx="14" fill="#fff" stroke="#e0e3f5" filter="url(#sh)"/>
+<circle cx="70" cy="1282" r="24" fill="#fff" stroke="#9ca3af" stroke-width="3"/>
+<text x="70" y="1288" font-size="16" font-weight="700" fill="#9ca3af" text-anchor="middle">5</text>
+<text x="150" y="1281" font-size="18" font-weight="700" fill="#1e1b4b">Docker, Kubernetes &amp; Ops</text>
+<rect x="1000" y="1263" width="140" height="24" rx="12" fill="#f1f2f6" stroke="#9ca3af"/>
+<text x="1070" y="1279" font-size="10" font-weight="700" fill="#4b5563" text-anchor="middle">ROADMAP</text>
+<text x="150" y="1305" font-size="12" fill="#6b7280">In simple words: how code is packed into containers, shipped automatically, scaled with traffic and watched for problems.</text>
+<rect x="150" y="1322" width="184" height="112" rx="10" fill="#fff" stroke="#0891B2" stroke-opacity=".45"/>
+<path d="M150 1332a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H150z" fill="#0891B2"/>
+<text x="164" y="1350" font-size="13" font-weight="700" fill="#0891B2">5.1 Docker Images</text>
+<text x="164" y="1370" font-size="10.5" fill="#374151">• One Dockerfile per service</text>
+<text x="164" y="1385" font-size="10.5" fill="#374151">• Multi-stage, small builds</text>
+<text x="164" y="1400" font-size="10.5" fill="#374151">• Same image in dev &amp; prod</text>
+<text x="164" y="1424" font-size="10" fill="#9ca3af">Docker</text>
+<rect x="349" y="1322" width="184" height="112" rx="10" fill="#fff" stroke="#4F46E5" stroke-opacity=".45"/>
+<path d="M349 1332a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H349z" fill="#4F46E5"/>
+<text x="363" y="1350" font-size="13" font-weight="700" fill="#4F46E5">5.2 CI/CD Pipeline</text>
+<text x="363" y="1370" font-size="10.5" fill="#374151">• GitHub Actions on each push</text>
+<text x="363" y="1385" font-size="10.5" fill="#374151">• Test, build, push to ECR</text>
+<text x="363" y="1400" font-size="10.5" fill="#374151">• Deploy with kubectl / Helm</text>
+<text x="363" y="1424" font-size="10" fill="#9ca3af">GitHub Actions · AWS ECR</text>
+<rect x="548" y="1322" width="184" height="112" rx="10" fill="#fff" stroke="#0D9488" stroke-opacity=".45"/>
+<path d="M548 1332a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H548z" fill="#0D9488"/>
+<text x="562" y="1350" font-size="13" font-weight="700" fill="#0D9488">5.3 Kubernetes</text>
+<text x="562" y="1370" font-size="10.5" fill="#374151">• Deployment runs the pods</text>
+<text x="562" y="1385" font-size="10.5" fill="#374151">• Service = stable address</text>
+<text x="562" y="1400" font-size="10.5" fill="#374151">• ConfigMaps &amp; Secrets</text>
+<text x="562" y="1424" font-size="10" fill="#9ca3af">AWS EKS</text>
+<rect x="747" y="1322" width="184" height="112" rx="10" fill="#fff" stroke="#D97706" stroke-opacity=".45"/>
+<path d="M747 1332a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H747z" fill="#D97706"/>
+<text x="761" y="1350" font-size="13" font-weight="700" fill="#D97706">5.4 Auto-scaling</text>
+<text x="761" y="1370" font-size="10.5" fill="#374151">• HPA watches CPU / memory</text>
+<text x="761" y="1385" font-size="10.5" fill="#374151">• Adds pods when busy</text>
+<text x="761" y="1400" font-size="10.5" fill="#374151">• Removes them when quiet</text>
+<text x="761" y="1424" font-size="10" fill="#9ca3af">Kubernetes HPA</text>
+<rect x="946" y="1322" width="184" height="112" rx="10" fill="#fff" stroke="#E11D48" stroke-opacity=".45"/>
+<path d="M946 1332a10 10 0 0 1 10-10h164a10 10 0 0 1 10 10v0H946z" fill="#E11D48"/>
+<text x="960" y="1350" font-size="13" font-weight="700" fill="#E11D48">5.5 Monitoring</text>
+<text x="960" y="1370" font-size="10.5" fill="#374151">• Logs from every pod</text>
+<text x="960" y="1385" font-size="10.5" fill="#374151">• Metrics &amp; alarms</text>
+<text x="960" y="1400" font-size="10.5" fill="#374151">• Alerts on errors / latency</text>
+<text x="960" y="1424" font-size="10" fill="#9ca3af">AWS CloudWatch</text>
+<text x="40" y="1490" font-size="17" font-weight="700" fill="#1e1b4b">Example: one visit from start to finish</text>
+<rect x="150.0" y="1506" width="152" height="80" rx="10" fill="#fff" stroke="#4F46E5"/>
+<circle cx="170.0" cy="1528" r="10" fill="#4F46E5"/><text x="170.0" y="1532" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+<text x="188.0" y="1532" font-size="12.5" font-weight="700" fill="#4F46E5">Open page</text>
+<text x="162.0" y="1554" font-size="10" fill="#374151">WAF checks the request;</text>
+<text x="162.0" y="1569" font-size="10" fill="#374151">CloudFront serves page</text>
+<rect x="315.6" y="1506" width="152" height="80" rx="10" fill="#fff" stroke="#0891B2"/>
+<circle cx="335.6" cy="1528" r="10" fill="#0891B2"/><text x="335.6" y="1532" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+<text x="353.6" y="1532" font-size="12.5" font-weight="700" fill="#0891B2">Search</text>
+<text x="327.6" y="1554" font-size="10" fill="#374151">Ingress checks JWT,</text>
+<text x="327.6" y="1569" font-size="10" fill="#374151">routes to Search svc</text>
+<rect x="481.2" y="1506" width="152" height="80" rx="10" fill="#fff" stroke="#0D9488"/>
+<circle cx="501.2" cy="1528" r="10" fill="#0D9488"/><text x="501.2" y="1532" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+<text x="519.2" y="1532" font-size="12.5" font-weight="700" fill="#0D9488">Results</text>
+<text x="493.2" y="1554" font-size="10" fill="#374151">SQL query finds homes;</text>
+<text x="493.2" y="1569" font-size="10" fill="#374151">Redis caches the list</text>
+<rect x="646.8" y="1506" width="152" height="80" rx="10" fill="#fff" stroke="#7C3AED"/>
+<circle cx="666.8" cy="1528" r="10" fill="#7C3AED"/><text x="666.8" y="1532" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+<text x="684.8" y="1532" font-size="12.5" font-weight="700" fill="#7C3AED">Book</text>
+<text x="658.8" y="1554" font-size="10" fill="#374151">Redis lock + SQL</text>
+<text x="658.8" y="1569" font-size="10" fill="#374151">transaction; Stripe pays</text>
+<rect x="812.4" y="1506" width="152" height="80" rx="10" fill="#fff" stroke="#D97706"/>
+<circle cx="832.4" cy="1528" r="10" fill="#D97706"/><text x="832.4" y="1532" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+<text x="850.4" y="1532" font-size="12.5" font-weight="700" fill="#D97706">Queue</text>
+<text x="824.4" y="1554" font-size="10" fill="#374151">BullMQ job sends the</text>
+<text x="824.4" y="1569" font-size="10" fill="#374151">confirmation email</text>
+<rect x="978.0" y="1506" width="152" height="80" rx="10" fill="#fff" stroke="#E11D48"/>
+<circle cx="998.0" cy="1528" r="10" fill="#E11D48"/><text x="998.0" y="1532" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">6</text>
+<text x="1016.0" y="1532" font-size="12.5" font-weight="700" fill="#E11D48">Scale &amp; watch</text>
+<text x="990.0" y="1554" font-size="10" fill="#374151">CloudWatch logs;</text>
+<text x="990.0" y="1569" font-size="10" fill="#374151">HPA adds pods if busy</text>
+<text x="600" y="1618" font-size="12" fill="#9ca3af" text-anchor="middle">Stage 1 is built today. Stages 2–5 are the target architecture for a future full-scale build, not yet implemented.</text>
 </svg>
